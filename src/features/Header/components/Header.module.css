@@ -1,0 +1,30 @@
+.header {
+  background-color: var(--surface-2);
+  display: grid;
+  padding-inline: var(--size-8);
+  padding-block: var(--size-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+}
+
+.logoLink {
+  width: 9.375rem;
+}
+
+.nav {
+  margin-inline-start: auto;
+
+  & ul{
+    list-style-type: none;
+  }
+
+  & .navLink {
+    color: var(--text-1);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--text-2);
+      text-decoration: underline;
+    }
+  }
+}
