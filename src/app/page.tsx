@@ -1,14 +1,11 @@
-import {Header} from '@/features/Header';
-import styles from './page.module.css';
+import { ContentWrapper } from '@/components/ContentWrapper';
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className={styles.main}>
+    <main>
+      <ContentWrapper>
         <p>Hello world</p>
-      </main>
-      <footer>Footer component</footer>
-    </>
+      </ContentWrapper>
+    </main>
   );
 }
