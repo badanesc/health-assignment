@@ -1,0 +1,112 @@
+.card {
+  display: block;
+  padding: var(--size-4);
+  background-color: var(--gray-0);
+  border: 1px solid var(--gray-2);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  max-inline-size: none;
+
+  &:hover, &:focus-within {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-3);
+  }
+
+  & .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: var(--size-3);
+  }
+
+  & .title {
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-6);
+    color: var(--text-1);
+    margin: 0;
+  }
+
+  & .status {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-5);
+    padding: var(--size-1) var(--size-2);
+    border-radius: var(--radius-2);
+    color: var(--text-1);
+
+    &.statusGood {
+      background-color: var(--green-1);
+    }
+
+    &.statusLow {
+      background-color: var(--orange-1);
+    }
+
+    &.statusNone {
+      background-color: var(--red-1);
+    }
+  }
+
+  & .content {
+    margin-block-end: var(--size-4);
+  }
+
+  & .dosage {
+    font-size: var(--font-size-3);
+    color: var(--text-1);
+    margin: 0 0 var(--size-2) 0;
+  }
+
+  & .doctor {
+    font-size: var(--font-size-2);
+    color: var(--text-2);
+    margin: 0 0 var(--size-3) 0;
+  }
+
+  & .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-4);
+  }
+
+  & .infoItem {
+    min-inline-size: 120px;
+  }
+
+  & .label {
+    display: block;
+    font-size: var(--font-size-1);
+    color: var(--text-2);
+    margin-block-end: var(--size-1);
+  }
+
+  & .value {
+    font-size: var(--font-size-2);
+    color: var(--text-1);
+  }
+
+  & .footer {
+    border-block-start: 1px solid var(--gray-2);
+    padding-block-start: var(--size-3);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  & .viewDetails {
+    font-size: var(--font-size-2);
+    color: var(--blue-6);
+    display: flex;
+    align-items: center;
+
+    &:hover, &:focus-visible {
+      text-decoration: underline;
+    }
+
+    &::after {
+      content: '→';
+      margin-inline-start: var(--size-1);
+    }
+  }
+}
