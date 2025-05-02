@@ -20,6 +20,11 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
+        <ul>
+          <li>Some list item</li>
+          <li>Some second list item</li>
+        </ul>
+
         <div className={styles.ctas}>
           <a
             className={styles.primary}
