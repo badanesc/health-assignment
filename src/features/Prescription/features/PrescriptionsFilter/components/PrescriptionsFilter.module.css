@@ -6,7 +6,7 @@
   position: sticky;
   /* Hardcoded to match the header height + spacings */
   /* Ideally, this should be a CSS variable */
-  top: 5.25rem;
+  top: 4.75rem;
 }
 
 .title {
