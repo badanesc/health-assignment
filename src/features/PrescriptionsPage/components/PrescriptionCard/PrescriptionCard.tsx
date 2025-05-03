@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Prescription } from '@/shared/types/prescription';
 import styles from './PrescriptionCard.module.css';
 import { getPrescriptionStatus } from '@/shared/utils/prescription';
+import {PrescriptionRefill} from '@/features/PrescriptionRefill';
 
 interface PrescriptionCardProps {
   prescription: Prescription;
@@ -56,6 +57,7 @@ export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {
       </div>
       
       <div className={styles.footer}>
+        <PrescriptionRefill id={prescription.id} ctaLabel="Request Quick Refill" />
         <span className="visually-hidden" id={`prescription-card-${prescription.id}`}>View more details about the {prescription.name} prescription</span>
         <Link href={`/prescriptions/${prescription.id}`} className={styles.viewDetails} aria-labelledby={`prescription-card-${prescription.id}`}>View Details</Link>
       </div>

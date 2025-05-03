@@ -107,6 +107,7 @@
   padding-block-start: var(--size-3);
   display: flex;
   justify-content: flex-end;
+  gap: var(--size-4);
 }
 
 .viewDetails {
