@@ -1,0 +1,11 @@
+.filter {
+  background-color: var(--surface-1);
+  border-radius: var(--radius-2);
+  border: 1px solid var(--gray-3);
+  padding: var(--size-4);
+}
+
+.title {
+  font-size: var(--font-size-4);
+  margin-block-end: var(--size-3);
+}

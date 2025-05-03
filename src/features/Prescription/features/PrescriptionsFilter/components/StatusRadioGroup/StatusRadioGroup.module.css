@@ -1,0 +1,9 @@
+.radioGroup {
+  padding: var(--size-3);
+
+  .legend {
+    font-size: var(--font-size-2);
+  }
+}
+
+

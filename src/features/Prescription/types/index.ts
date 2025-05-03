@@ -10,3 +10,5 @@ export interface Prescription {
   prescribedDate: string;
   expiryDate: string;
 }
+
+export type PrescriptionStatus = 'active' | 'low' | 'expired';

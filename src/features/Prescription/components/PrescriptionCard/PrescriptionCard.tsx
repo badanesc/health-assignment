@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Prescription } from '@/features/Prescription/types';
 import styles from './PrescriptionCard.module.css';
-
+import { getPrescriptionStatus } from '@/features/Prescription/helpers';
 interface PrescriptionCardProps {
   prescription: Prescription;
 }
@@ -17,12 +17,13 @@ export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {
       year: 'numeric',
     });
   };
-
+  
   // Determine status styling based on refills remaining
+  const prescriptionStatus = getPrescriptionStatus(prescription.refillsRemaining);
   const getStatusStyles = () => {
-    if (prescription.refillsRemaining === 0) {
+    if (prescriptionStatus === 'expired') {
       return styles.statusNone;
-    } else if (prescription.refillsRemaining === 1) {
+    } else if (prescriptionStatus === 'low') {
       return styles.statusLow;
     } else {
       return styles.statusGood;
