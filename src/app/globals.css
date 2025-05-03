@@ -16,6 +16,10 @@ body {
   overflow: visible;
   height: auto;
   padding-block-end: var(--size-fluid-2);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--teal-12);
+  }
 }
 
 a {

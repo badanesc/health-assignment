@@ -1,5 +1,32 @@
+.pageHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: var(--size-4);
+}
+
 .pageTitle {
   max-width: 100%;
-  margin-block-end: var(--size-4);
   font-size: var(--font-size-6);
+}
+
+.backLink {
+  font-size: var(--font-size-4);
+  color: var(--link);
+
+  &:hover, &:focus-visible {
+    text-decoration: underline;
+  }
+}
+
+
+@media (--lg-n-below) {
+  .pageTitle {
+    font-size: var(--font-size-5);
+  }
+
+  .backLink {
+    font-size: var(--font-size-3);
+  }
 }

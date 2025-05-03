@@ -96,7 +96,7 @@ export const PrescriptionDetail = () => {
             <PrescriptionRefill id={prescription.id} ctaLabel="Request Refill" />
             
             <button type="button">
-              Cancel Refill
+              Cancel Prescription
             </button>
           </div>      
         </div>
