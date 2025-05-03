@@ -1,4 +1,3 @@
-// import { NextRequest } from "next/server";
 import { MOCK_PRESCRIPTIONS } from "@/data/prescriptions";
 
 export const dynamic = "force-dynamic";

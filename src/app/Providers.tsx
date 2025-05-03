@@ -1,15 +1,42 @@
-"use client";
+'use client'
 
-import { QueryClientProvider } from "@tanstack/react-query";
-import { FC, PropsWithChildren, useState } from "react";
-import { globalQueryClient } from "./queryClient";
+import {
+  QueryClient,
+  QueryClientProvider,
+  isServer,
+} from '@tanstack/react-query'
+import { PropsWithChildren } from "react";
+import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental'
 
-export const Providers: FC<PropsWithChildren> = ({ children }) => {
-  const [queryClient] = useState(globalQueryClient);
+function makeQueryClient() {
+  return new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 60 * 1000,
+      },
+    },
+  })
+}
+
+let browserQueryClient: QueryClient | undefined = undefined
+
+function getQueryClient() {
+  if (isServer) {
+    return makeQueryClient()
+  } else {
+    if (!browserQueryClient) browserQueryClient = makeQueryClient()
+    return browserQueryClient
+  }
+}
+
+export const Providers: React.FC<PropsWithChildren> = ({ children }) => {
+  const queryClient = getQueryClient()
 
   return (
     <QueryClientProvider client={queryClient}>
-      {children}
+      <ReactQueryStreamedHydration>
+        {children}
+      </ReactQueryStreamedHydration>
     </QueryClientProvider>
-  );
-};
+  )
+}
