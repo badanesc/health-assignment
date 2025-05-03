@@ -5,3 +5,9 @@
   gap: var(--size-4);
   width: 100%;
 }
+
+@media (--md-n-below) {
+	.page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

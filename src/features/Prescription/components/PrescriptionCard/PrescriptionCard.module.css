@@ -1,8 +1,8 @@
 .card {
   display: block;
   padding: var(--size-4);
-  background-color: var(--gray-0);
-  border: 1px solid var(--gray-2);
+  background-color: var(--surface-1);
+  border: 1px solid var(--surface-2);
   border-radius: var(--radius-3);
   box-shadow: var(--shadow-2);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -47,6 +47,20 @@
 
   &.statusNone {
     background-color: var(--red-1);
+  }
+
+  @media (--OSdark) {
+    &.statusGood {
+      background-color: var(--green-9);
+    }
+  
+    &.statusLow {
+      background-color: var(--orange-9);
+    }
+  
+    &.statusNone {
+      background-color: var(--red-9);
+    }
   }
 }
 
@@ -108,5 +122,9 @@
   &::after {
     content: '→';
     margin-inline-start: var(--size-1);
+  }
+
+  @media (--OSdark) {
+    color: var(--blue-2);
   }
 }

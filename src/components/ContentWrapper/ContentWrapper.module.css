@@ -8,3 +8,9 @@
     grid-column: 2;
   }
 }
+
+@media (--lg-n-below) {
+  .contentWrapper {
+    grid-template-columns: var(--size-4) calc(100% - 2 * var(--size-4)) var(--size-4);
+  }
+}

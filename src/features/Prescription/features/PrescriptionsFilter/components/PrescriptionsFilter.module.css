@@ -1,15 +1,21 @@
 .filter {
-  background-color: var(--surface-1);
+  background-color: var(--surface-2);
   border-radius: var(--radius-2);
   border: 1px solid var(--gray-3);
   padding: var(--size-4);
   position: sticky;
   /* Hardcoded to match the header height + spacings */
   /* Ideally, this should be a CSS variable */
-  top: 4.75rem;
+  inset-block-start: 4.75rem;
 }
 
 .title {
   font-size: var(--font-size-4);
   margin-block-end: var(--size-3);
+}
+
+@media (--md-n-below) {
+	.filter {
+    inset-block-end: 0rem;
+  }
 }

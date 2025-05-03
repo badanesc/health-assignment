@@ -17,10 +17,12 @@ export const StatusRadioGroup = () => {
   return (
     <fieldset className={styles.radioGroup}>
       <legend className={styles.legend}>Filter by prescription status</legend>
-      <RadioInput label="All" defaultChecked name="status" value="all" onChange={handleStatusChange} />
-      <RadioInput label="Active" name="status" value={active} onChange={handleStatusChange} />
-      <RadioInput label="Low" name="status" value={low} onChange={handleStatusChange} />
-      <RadioInput label="Expired" name="status" value={expired} onChange={handleStatusChange} />
+      <div className={styles.radioGroupContent}>
+        <RadioInput label="All" defaultChecked name="status" value="all" onChange={handleStatusChange} />
+        <RadioInput label="Active" name="status" value={active} onChange={handleStatusChange} />
+        <RadioInput label="Low" name="status" value={low} onChange={handleStatusChange} />
+        <RadioInput label="Expired" name="status" value={expired} onChange={handleStatusChange} />
+      </div>
     </fieldset>
 
   );
