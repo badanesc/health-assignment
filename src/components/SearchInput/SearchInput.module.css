@@ -4,8 +4,8 @@
 
 .searchBox {
   position: relative;
-  inline-size: 100%;
-  max-inline-size: 500px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .input {
-  inline-size: 100%;
+  width: 100%;
   padding: var(--size-2) var(--size-3);
   padding-inline-end: var(--size-8);
   font-size: var(--font-size-2);
@@ -45,7 +45,7 @@
   cursor: pointer;
   padding: var(--size-1);
   border-radius: 50%;
-  inline-size: 24px;
+  width: 24px;
   block-size: 24px;
   display: flex;
   align-items: center;

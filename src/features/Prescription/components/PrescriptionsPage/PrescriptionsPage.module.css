@@ -3,5 +3,5 @@
   align-items: start;
   grid-template-columns: 2fr minmax(var(--size-content-1), 1fr);
   gap: var(--size-4);
-  inline-size: 100%;
+  width: 100%;
 }

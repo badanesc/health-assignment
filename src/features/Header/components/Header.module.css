@@ -14,7 +14,7 @@
 .nav {
   margin-inline-start: auto;
 
-  & ul{
+  & ul {
     list-style-type: none;
   }
 
