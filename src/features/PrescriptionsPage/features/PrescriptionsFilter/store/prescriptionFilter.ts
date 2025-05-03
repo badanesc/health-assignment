@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { PrescriptionStatus } from '@/features/PrescriptionsPage/types';
+import { PrescriptionStatus } from '@/shared/types/prescription';
 
 interface PrescriptionFilters {
   searchTerm: string;

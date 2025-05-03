@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Prescription } from '@/shared/types/prescription';
 import styles from './PrescriptionCard.module.css';
 import { getPrescriptionStatus } from '@/shared/utils/prescription';
+
 interface PrescriptionCardProps {
   prescription: Prescription;
 }

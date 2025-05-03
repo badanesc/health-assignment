@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { RadioInput } from '@/components/RadioInput';
-import { PRESCRIPTION_STATUS } from '@/features/PrescriptionsPage/constants';
-import { PrescriptionStatus } from '@/features/PrescriptionsPage/types';
-import { usePrescriptionsFilters } from '@/features/PrescriptionsPage/features/PrescriptionsFilter/store';
+import { PRESCRIPTION_STATUS } from '../../../../constants';
+import { PrescriptionStatus } from '@/shared/types/prescription';
+import { usePrescriptionsFilters } from '../../store';
 
 import styles from './StatusRadioGroup.module.css';
 

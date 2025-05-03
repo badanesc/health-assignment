@@ -1,5 +1,5 @@
-import { usePrescriptionsQuery } from "@/features/PrescriptionsPage/hooks";
-import { usePrescriptionsFilters } from "@/features/PrescriptionsPage/features/PrescriptionsFilter/store";
+import { usePrescriptionsQuery } from "@/shared/hooks/usePrescriptionsQuery";
+import { usePrescriptionsFilters } from "../features/PrescriptionsFilter/store";
 import { getPrescriptionStatus } from "@/shared/utils/prescription";
 
 export const useFilteredPrescriptions = () => {

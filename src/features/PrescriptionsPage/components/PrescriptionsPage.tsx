@@ -1,7 +1,7 @@
 import { ContentWrapper } from "@/components/ContentWrapper";
-import { PrescriptionsList } from "@/features/PrescriptionsPage/components";
+import { PrescriptionsList } from "./PrescriptionsList";
 import styles from './PrescriptionsPage.module.css';
-import { PrescriptionsFilter } from "@/features/PrescriptionsPage/features/PrescriptionsFilter/components";
+import { PrescriptionsFilter } from "../features/PrescriptionsFilter/components";
 
 export const PrescriptionsPage = () => {
   return (
