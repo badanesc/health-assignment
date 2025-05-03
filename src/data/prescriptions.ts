@@ -1,4 +1,4 @@
-import { Prescription } from "@/features/Prescription/types";
+import { Prescription } from "@/features/PrescriptionsPage/types";
 
 export const MOCK_PRESCRIPTIONS: Prescription[] = [
   {
