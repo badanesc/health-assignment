@@ -1,5 +1,5 @@
-import { RequestPrescriptionRefillProps } from "@/features/PrescriptionRefill/api";
-import { Prescription } from "@/features/PrescriptionsPage/types";
+import { RequestPrescriptionRefillProps } from "@/shared/api/prescriptions";
+import { Prescription } from "@/shared/types/prescription";
 import sqlite3Module from "sqlite3";
 const sqlite3 = sqlite3Module.verbose();
 
