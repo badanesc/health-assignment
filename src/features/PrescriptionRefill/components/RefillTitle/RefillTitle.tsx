@@ -1,4 +1,4 @@
-import { usePrescriptionQuery } from "@/features/PrescriptionDetailsPage/hooks/usePrescriptionQuery";
+import { usePrescriptionQuery } from "@/shared/hooks/usePrescriptionQuery";
 
 const getRefillTitle = (prescriptionName: string | null) => {
   return <h5>{`Refill ${prescriptionName} Prescription`}</h5>;

@@ -1,9 +1,8 @@
 import { useRef } from "react";
-
 import { RefillTitle } from "./RefillTitle";
 import styles from "./PrescriptionRefill.module.css";
-import { usePrescriptionRefillRequestQuery } from "../hooks";
-import { RequestPrescriptionRefillProps } from "../api";
+import { RequestPrescriptionRefillProps } from "@/shared/api/prescriptions";
+import { usePrescriptionRefillMutation } from "@/shared/hooks/usePrescriptionRefillMutation";
 
 interface PrescriptionRefillProps {
   id: string;
@@ -15,7 +14,7 @@ export const PrescriptionRefill: React.FC<PrescriptionRefillProps> = ({ id, ctaL
   const dialogRef = useRef<HTMLDialogElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const { mutate: requestRefill, isPending: isRefillPending } = usePrescriptionRefillRequestQuery();
+  const { mutate: requestRefill, isPending: isRefillPending } = usePrescriptionRefillMutation();
 
   const handleOpenDialog = () => {
     dialogRef.current?.showModal();
