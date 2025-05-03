@@ -1,0 +1,73 @@
+.prescription {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--size-4);
+}
+
+.prescriptionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
+
+.prescriptionStatus {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-5);
+  padding: var(--size-1) var(--size-2);
+  border-radius: var(--radius-2);
+  color: var(--text-1);
+
+  &.statusGood {
+    background-color: var(--green-1);
+  }
+
+  &.statusLow {
+    background-color: var(--orange-1);
+  }
+
+  &.statusNone {
+    background-color: var(--red-1);
+  }
+
+  @media (--OSdark) {
+    &.statusGood {
+      background-color: var(--green-9);
+    }
+  
+    &.statusLow {
+      background-color: var(--orange-9);
+    }
+  
+    &.statusNone {
+      background-color: var(--red-9);
+    }
+  }
+}
+
+.prescriptionAside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+
+.prescriptionImage {
+  width: 100%;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: var(--size-2);
+
+  & > button {
+    flex: 1
+  }
+}
+
+@media (--md-n-below) {
+  .prescription {
+    grid-template-columns: 1fr;
+  }
+}

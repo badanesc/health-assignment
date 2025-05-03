@@ -1,0 +1,5 @@
+.pageTitle {
+  max-width: 100%;
+  margin-block-end: var(--size-4);
+  font-size: var(--font-size-6);
+}

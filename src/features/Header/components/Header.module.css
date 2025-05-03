@@ -31,3 +31,9 @@
     }
   }
 }
+
+@media (--lg-n-below) {
+  .header {
+    padding-inline: var(--size-4);
+  }
+}

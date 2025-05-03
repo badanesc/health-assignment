@@ -6,7 +6,7 @@
   position: sticky;
   /* Hardcoded to match the header height + spacings */
   /* Ideally, this should be a CSS variable */
-  inset-block-start: 4.75rem;
+  inset-block-start: 5.25rem;
 }
 
 .title {
