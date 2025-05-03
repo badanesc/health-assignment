@@ -9,6 +9,7 @@ export interface Prescription {
   pharmacy: string;
   prescribedDate: string;
   expiryDate: string;
+  notes?: string;
 }
 
 export type PrescriptionStatus = 'active' | 'low' | 'expired';

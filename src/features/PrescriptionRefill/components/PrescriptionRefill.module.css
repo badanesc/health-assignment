@@ -1,0 +1,41 @@
+.trigger {
+  width: 100%;
+}
+
+.dialog {
+  width: 100%;
+  max-width: var(--size-content-2);
+}
+
+.dialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: var(--size-4);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+
+  textarea {
+    resize: none;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-2);
+
+  & > * {
+    flex: 1;
+  }
+}

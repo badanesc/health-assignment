@@ -6,6 +6,7 @@ import { usePrescriptionQuery } from "../../hooks";
 import styles from "./PrescriptionDetail.module.css";
 import { getPrescriptionStatus } from "@/features/PrescriptionsPage/helpers";
 import { PrescriptionStatus } from "@/features/PrescriptionsPage/types";
+import { PrescriptionRefill } from "@/features/PrescriptionRefill";
 
 const getStatusStyles = (status: PrescriptionStatus) => {
   if (status === 'expired') {
@@ -84,14 +85,16 @@ export const PrescriptionDetail = () => {
         </details>
       </div>
       <div className={styles.prescriptionAside}>
-          <Image className={styles.prescriptionImage} src="https://picsum.photos/seed/picsum/600/400" alt={`${prescription.name} image reference`} width={600} height={400} />
+          <figure>
+            <legend>Medicine Picture for reference</legend>
+            <Image className={styles.prescriptionImage} src="https://picsum.photos/seed/picsum/600/400" alt="" width={600} height={400} />
+          </figure>
 
         <div>
           <p>{getActionLabel(prescriptionStatus)}</p>    
           <div className={styles.buttonGroup}>
-            <button type="button">
-              Request Refill
-            </button>
+            <PrescriptionRefill id={prescription.id} ctaLabel="Request Refill" />
+            
             <button type="button">
               Cancel Refill
             </button>
