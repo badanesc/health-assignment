@@ -3,7 +3,7 @@ import { fetchPrescription } from "../api";
 
 export const usePrescriptionQuery = (id: string) => {
   return useQuery({
-    queryKey: ['prescription', id], 
+    queryKey: ['prescriptions', id], 
     queryFn: () => fetchPrescription(id) });
 };
   

@@ -10,6 +10,7 @@ export interface Prescription {
   prescribedDate: string;
   expiryDate: string;
   notes?: string;
+  frequency?: string;
 }
 
 export type PrescriptionStatus = 'active' | 'low' | 'expired';
