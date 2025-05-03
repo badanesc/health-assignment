@@ -1,8 +1,8 @@
 'use client';
 
 import { Fragment } from "react";
-import { useFilteredPrescriptions } from "@/features/Prescription/hooks";
-import { PrescriptionCard } from "@/features/Prescription/components";
+import { useFilteredPrescriptions } from "@/features/PrescriptionsPage/hooks";
+import { PrescriptionCard } from "@/features/PrescriptionsPage/components";
 import styles from "./PrescriptionsList.module.css";
 
 const PrescriptionsList = () => {

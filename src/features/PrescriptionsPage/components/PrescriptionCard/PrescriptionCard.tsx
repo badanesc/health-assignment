@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Prescription } from '@/features/Prescription/types';
+import { Prescription } from '@/features/PrescriptionsPage/types';
 import styles from './PrescriptionCard.module.css';
-import { getPrescriptionStatus } from '@/features/Prescription/helpers';
+import { getPrescriptionStatus } from '@/features/PrescriptionsPage/helpers';
 interface PrescriptionCardProps {
   prescription: Prescription;
 }

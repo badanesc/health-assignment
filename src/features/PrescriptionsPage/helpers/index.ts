@@ -1,5 +1,5 @@
-import { PrescriptionStatus } from '@/features/Prescription/types';
-import { PRESCRIPTION_STATUS } from '@/features/Prescription/constants';
+import { PrescriptionStatus } from '@/features/PrescriptionsPage/types';
+import { PRESCRIPTION_STATUS } from '@/features/PrescriptionsPage/constants';
 
 export const getPrescriptionStatus = (refillsRemaining: number):PrescriptionStatus => {
   if (refillsRemaining === 0) {

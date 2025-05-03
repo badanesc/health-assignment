@@ -1,6 +1,6 @@
-import { usePrescriptionsQuery } from "@/features/Prescription/hooks";
-import { usePrescriptionsFilters } from "@/features/Prescription/features/PrescriptionsFilter/store";
-import { getPrescriptionStatus } from "@/features/Prescription/helpers";
+import { usePrescriptionsQuery } from "@/features/PrescriptionsPage/hooks";
+import { usePrescriptionsFilters } from "@/features/PrescriptionsPage/features/PrescriptionsFilter/store";
+import { getPrescriptionStatus } from "@/features/PrescriptionsPage/helpers";
 
 export const useFilteredPrescriptions = () => {
   const { data, isLoading, error } = usePrescriptionsQuery();
