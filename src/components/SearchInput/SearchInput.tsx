@@ -42,9 +42,9 @@ export const SearchInput: React.FC<SearchInputProps> = ({ onChange }) => {
           <button 
             className={styles.clearButton} 
             onClick={handleClean}
-            aria-label="Clear search"
           >
-            ✕
+            <span className='visually-hidden'>Clear search</span>
+            <span aria-hidden="true">✕</span>
           </button>
         )}
       </div>
