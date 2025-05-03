@@ -1,4 +1,4 @@
-import { Prescription } from "@/features/PrescriptionsPage/types";
+import { Prescription } from "@/shared/types/prescription";
 
 export const fetchPrescription = async (id: string): Promise<{ prescription: Prescription }> => {
   console.log("fetching prescription with id: ", id);

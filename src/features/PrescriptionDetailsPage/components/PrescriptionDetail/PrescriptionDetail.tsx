@@ -2,11 +2,11 @@
 
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { usePrescriptionQuery } from "../../hooks";
+import { usePrescriptionQuery } from "@/shared/hooks/usePrescriptionQuery";
+import { PrescriptionRefill } from "@/features/PrescriptionRefill/components";
+import { getPrescriptionStatus } from "@/shared/utils/prescription";
 import styles from "./PrescriptionDetail.module.css";
-import { getPrescriptionStatus } from "@/features/PrescriptionsPage/helpers";
-import { PrescriptionStatus } from "@/features/PrescriptionsPage/types";
-import { PrescriptionRefill } from "@/features/PrescriptionRefill";
+import { PrescriptionStatus } from "@/shared/types/prescription";
 
 const getStatusStyles = (status: PrescriptionStatus) => {
   if (status === 'expired') {
