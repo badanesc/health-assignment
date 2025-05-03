@@ -2,9 +2,12 @@
   background-color: var(--surface-1);
   display: grid;
   padding-inline: var(--size-8);
-  padding-block: var(--size-4);
+  height: 3.75rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: var(--layer-1);
 }
 
 .logoLink {

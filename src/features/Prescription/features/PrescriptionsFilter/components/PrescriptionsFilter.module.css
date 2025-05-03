@@ -3,6 +3,10 @@
   border-radius: var(--radius-2);
   border: 1px solid var(--gray-3);
   padding: var(--size-4);
+  position: sticky;
+  /* Hardcoded to match the header height + spacings */
+  /* Ideally, this should be a CSS variable */
+  top: 5.25rem;
 }
 
 .title {
