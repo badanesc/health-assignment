@@ -47,6 +47,8 @@ export const PrescriptionRefill: React.FC<PrescriptionRefillProps> = ({ id, ctaL
             <span aria-hidden="true">✕</span>
           </button>
         </div>
+
+        <p className={styles.dialogDescription}>This form will only update the count of the refills remaining and the next refill date.</p>
         
         <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
           <div className={styles.formGroup}>
