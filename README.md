@@ -65,9 +65,9 @@ For accessibility, this project uses:
 - Ensure proper contrast between text and background;
 
 In a real word scenario, the app design and interaction should be designed with a11y in mind. Some examples can include: 
-- extensive form validation, that guides the user through validation and error handling;
+- extensive form validation, that guides the user through completion and error handling;
 - graceful progress/loading and error states, with options to retry;
-- UI and animation hints to guide the user through the main app flow and provide feedback on actions;
+- UI/UX and Animation, to guide the user through the main app flow and provide feedback on actions;
 
 ### Project Structure
 ```
