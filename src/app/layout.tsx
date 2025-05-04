@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "open-props/normalize.min.css";
-import "open-props/buttons.min.css";
+// import "open-props/normalize.min.css";
+// import "open-props/buttons.css";
 import "./globals.css";
 
 import { Providers } from "./Providers";
