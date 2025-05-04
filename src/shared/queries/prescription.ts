@@ -3,7 +3,7 @@ import { requestPrescriptionRefill, RequestPrescriptionRefillProps } from "../ap
 
 export const makePrescriptionQuery = (id: string) => {
   return {
-    queryKey: ['prescription', id],
+    queryKey: ['prescriptions', id],
     queryFn: () => fetchPrescription(id),
   }
 }

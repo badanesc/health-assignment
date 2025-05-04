@@ -11,7 +11,7 @@ const db = new sqlite3.Database("db/db.txt", sqlite3Module.OPEN_READWRITE, async
 
   await run("DROP TABLE IF EXISTS prescriptions");
 
-  await run("CREATE TABLE prescriptions (id INT PRIMARY KEY, name TEXT, dosage TEXT, nextRefillDate TEXT, doctor TEXT, refillsRemaining INT, instructions TEXT, pharmacy TEXT, prescribedDate TEXT, expiryDate TEXT)");
+  await run("CREATE TABLE prescriptions (id TEXT PRIMARY KEY, name TEXT, dosage TEXT, nextRefillDate TEXT, doctor TEXT, refillsRemaining INT, instructions TEXT, pharmacy TEXT, prescribedDate TEXT, expiryDate TEXT)");
 
   for (const prescription of MOCK_PRESCRIPTIONS) {
     await run("INSERT INTO prescriptions VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [
