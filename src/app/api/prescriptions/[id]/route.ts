@@ -100,7 +100,7 @@ export const PUT = async (request: Request, { params }: { params: Promise<{ id: 
   
   const updatedPrescription = await updatePrescription(id, {
     refillsRemaining: prescription.refillsRemaining + 2,
-    nextRefillDate: endDate,
+    expiryDate: endDate,
   });
 
   if (!updatedPrescription) {

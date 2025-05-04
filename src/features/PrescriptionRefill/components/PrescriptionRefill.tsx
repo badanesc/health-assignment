@@ -3,7 +3,7 @@ import { RefillTitle } from "./RefillTitle";
 import styles from "./PrescriptionRefill.module.css";
 import { RequestPrescriptionRefillProps } from "@/shared/api/prescriptions";
 import { makePrescriptionRefillMutation } from "@/shared/queries/prescription";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface PrescriptionRefillProps {
   id: string;
@@ -16,7 +16,14 @@ export const PrescriptionRefill: React.FC<PrescriptionRefillProps> = ({ id, ctaL
   const formRef = useRef<HTMLFormElement>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const { mutate: requestRefill, isPending: isRefillPending } = useMutation(makePrescriptionRefillMutation());
+  const queryClient = useQueryClient();
+  const { mutate: requestRefill, isPending: isRefillPending } = useMutation(
+    {
+    ...makePrescriptionRefillMutation(),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['prescriptions'] });
+    },
+  });
 
   const handleOpenDialog = () => {
     setIsDialogOpen(true);
@@ -51,7 +58,7 @@ export const PrescriptionRefill: React.FC<PrescriptionRefillProps> = ({ id, ctaL
           </button>
         </div>
 
-        <p className={styles.dialogDescription}>This form will only update the count of the refills remaining and the next refill date.</p>
+        <p className={styles.dialogDescription}>This form will only update the count of the refills remaining and the expiry date.</p>
         
         <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
           <div className={styles.formGroup}>
