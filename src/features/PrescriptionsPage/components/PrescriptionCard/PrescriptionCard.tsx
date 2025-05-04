@@ -10,17 +10,7 @@ interface PrescriptionCardProps {
   prescription: Prescription;
 }
 
-export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {
-  // Format the date to be more readable
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-GB', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    });
-  };
-  
-  // Determine status styling based on refills remaining
+export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {  
   const prescriptionStatus = getPrescriptionStatus(prescription.refillsRemaining);
   const getStatusStyles = () => {
     if (prescriptionStatus === 'expired') {
@@ -47,7 +37,7 @@ export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {
         <div className={styles.info}>
           <div className={styles.infoItem}>
             <span className={styles.label}>Next Refill:</span>
-            <span className={styles.value}>{formatDate(prescription.nextRefillDate)}</span>
+            <span className={styles.value}>{prescription.nextRefillDate}</span>
           </div>
           <div className={styles.infoItem}>
             <span className={styles.label}>Pharmacy:</span>
