@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { RefillTitle } from "./RefillTitle";
 import styles from "./PrescriptionRefill.module.css";
 import { RequestPrescriptionRefillProps } from "@/shared/api/prescriptions";
@@ -13,15 +13,18 @@ export const PrescriptionRefill: React.FC<PrescriptionRefillProps> = ({ id, ctaL
   const dialogId = `refill-dialog-${id}`;
   const dialogRef = useRef<HTMLDialogElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const { mutate: requestRefill, isPending: isRefillPending } = usePrescriptionRefillMutation();
 
   const handleOpenDialog = () => {
+    setIsDialogOpen(true);
     dialogRef.current?.showModal();
   };
 
   const handleCloseDialog = () => {
     dialogRef.current?.close();
+    setIsDialogOpen(false);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -40,7 +43,7 @@ export const PrescriptionRefill: React.FC<PrescriptionRefillProps> = ({ id, ctaL
     <div>
       <dialog id={dialogId} ref={dialogRef} className={styles.dialog}>
         <div className={styles.dialogHeader}>
-          <RefillTitle id={id} />
+          {isDialogOpen && <RefillTitle id={id} />}
           <button type="button" onClick={handleCloseDialog}>
             <span className='visually-hidden'>Close refill dialog</span>
             <span aria-hidden="true">✕</span>
