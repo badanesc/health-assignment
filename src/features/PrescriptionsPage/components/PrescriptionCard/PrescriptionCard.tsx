@@ -5,6 +5,8 @@ import { Prescription } from '@/shared/types/prescription';
 import styles from './PrescriptionCard.module.css';
 import { getPrescriptionStatus } from '@/shared/utils/prescription';
 import {PrescriptionRefill} from '@/features/PrescriptionRefill';
+import { useQueryClient } from '@tanstack/react-query';
+import { makePrescriptionQuery } from '@/shared/queries/prescription';
 
 interface PrescriptionCardProps {
   prescription: Prescription;
@@ -20,6 +22,11 @@ export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {
     } else {
       return styles.statusGood;
     }
+  };
+
+  const queryClient = useQueryClient();
+  const prefetchPrescriptionDetails = () => {
+    queryClient.prefetchQuery(makePrescriptionQuery(prescription.id));
   };
 
   return (
@@ -49,7 +56,7 @@ export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {
       <div className={styles.footer}>
         <PrescriptionRefill id={prescription.id} ctaLabel="Request Quick Refill" />
         <span className="visually-hidden" id={`prescription-card-${prescription.id}`}>View more details about the {prescription.name} prescription</span>
-        <Link href={`/prescriptions/${prescription.id}`} className={styles.viewDetails} aria-labelledby={`prescription-card-${prescription.id}`}>View Details</Link>
+        <Link onMouseEnter={prefetchPrescriptionDetails} onFocus={prefetchPrescriptionDetails} href={`/prescriptions/${prescription.id}`} className={styles.viewDetails} aria-labelledby={`prescription-card-${prescription.id}`}>View Details</Link>
       </div>
     </li>
   );
