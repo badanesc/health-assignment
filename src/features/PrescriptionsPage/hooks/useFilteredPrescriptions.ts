@@ -1,13 +1,15 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { makePrescriptionsQuery } from "@/shared/queries/prescriptions";
 import { usePrescriptionsFilters } from "../features/PrescriptionsFilter/store";
 import { getPrescriptionStatus } from "@/shared/utils/prescription";
 
 export const useFilteredPrescriptions = () => {
-  const { data, isLoading, error } = useSuspenseQuery(makePrescriptionsQuery());
+  const { data, isLoading, error } = useQuery(makePrescriptionsQuery());
   const { searchTerm, statusFilter } = usePrescriptionsFilters();
 
-  const filteredPrescriptions = data?.prescriptions.filter((prescription) => {
+  if (!data) return { data, isLoading, error };
+
+  const filteredPrescriptions = data.prescriptions.filter((prescription) => {
     const status = getPrescriptionStatus(prescription.refillsRemaining);
     const nameMatch = prescription.name.toLowerCase().includes(searchTerm.toLowerCase());
     const statusMatch = statusFilter === 'all' || status === statusFilter;

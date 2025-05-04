@@ -7,7 +7,7 @@ import { getPrescriptionStatus } from "@/shared/utils/prescription";
 import styles from "./PrescriptionDetail.module.css";
 import { PrescriptionStatus } from "@/shared/types/prescription";
 import { makePrescriptionQuery } from "@/shared/queries/prescription";
-import { useSuspenseQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 const getStatusStyles = (status: PrescriptionStatus) => {
   if (status === 'expired') {
@@ -31,7 +31,16 @@ const getActionLabel = (status: PrescriptionStatus) => {
 
 export const PrescriptionDetail = () => {
   const { id } = useParams();
-  const { data } = useSuspenseQuery(makePrescriptionQuery(id as string))
+  const { data, isLoading } = useQuery(makePrescriptionQuery(id as string))
+
+  if (isLoading) {
+    return <div>Loading prescription details...</div>;
+  }
+
+  if (!data) {
+    return <div>Error loading prescription</div>;
+  }
+
   const { prescription } = data;
 
   const prescriptionStatus = getPrescriptionStatus(prescription.refillsRemaining);
