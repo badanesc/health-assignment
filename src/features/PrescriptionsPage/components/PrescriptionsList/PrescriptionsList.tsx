@@ -6,12 +6,8 @@ import { PrescriptionCard } from "../PrescriptionCard";
 import styles from "./PrescriptionsList.module.css";
 
 const PrescriptionsList = () => {
-  const { data, isLoading, error } = useFilteredPrescriptions();
-  const { prescriptions } = data || {};
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-  if (!prescriptions || !prescriptions.length) return <div>No prescriptions found</div>;
+  const { data } = useFilteredPrescriptions();
+  const { prescriptions } = data;
     
   return (
     <ul className={styles.list}>

@@ -2,7 +2,8 @@ import { useRef, useState } from "react";
 import { RefillTitle } from "./RefillTitle";
 import styles from "./PrescriptionRefill.module.css";
 import { RequestPrescriptionRefillProps } from "@/shared/api/prescriptions";
-import { usePrescriptionRefillMutation } from "@/shared/hooks/usePrescriptionRefillMutation";
+import { makePrescriptionRefillMutation } from "@/shared/queries/prescription";
+import { useMutation } from "@tanstack/react-query";
 
 interface PrescriptionRefillProps {
   id: string;
@@ -15,7 +16,7 @@ export const PrescriptionRefill: React.FC<PrescriptionRefillProps> = ({ id, ctaL
   const formRef = useRef<HTMLFormElement>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const { mutate: requestRefill, isPending: isRefillPending } = usePrescriptionRefillMutation();
+  const { mutate: requestRefill, isPending: isRefillPending } = useMutation(makePrescriptionRefillMutation());
 
   const handleOpenDialog = () => {
     setIsDialogOpen(true);

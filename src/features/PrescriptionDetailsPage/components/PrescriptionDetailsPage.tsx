@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ContentWrapper } from "@/components/ContentWrapper";
 import { PrescriptionDetail } from "./PrescriptionDetail";
 import styles from "./PrescriptionDetailsPage.module.css";
+import { Suspense } from "react";
 
 export const PrescriptionDetailsPage = () => {
   return (
@@ -10,7 +11,9 @@ export const PrescriptionDetailsPage = () => {
         <h1 className={styles.pageTitle}>Prescription Details Page</h1>
         <Link href="/prescriptions" className={styles.backLink}>Back to Prescriptions</Link>
       </div>
-      <PrescriptionDetail />
+      <Suspense fallback={<div>Loading prescription details page...</div>}>
+        <PrescriptionDetail />
+      </Suspense>
     </ContentWrapper>
   );
 };

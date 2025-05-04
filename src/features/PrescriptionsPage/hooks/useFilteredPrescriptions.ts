@@ -1,9 +1,10 @@
-import { usePrescriptionsQuery } from "@/shared/hooks/usePrescriptionsQuery";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { makePrescriptionsQuery } from "@/shared/queries/prescriptions";
 import { usePrescriptionsFilters } from "../features/PrescriptionsFilter/store";
 import { getPrescriptionStatus } from "@/shared/utils/prescription";
 
 export const useFilteredPrescriptions = () => {
-  const { data, isLoading, error } = usePrescriptionsQuery();
+  const { data, isLoading, error } = useSuspenseQuery(makePrescriptionsQuery());
   const { searchTerm, statusFilter } = usePrescriptionsFilters();
 
   const filteredPrescriptions = data?.prescriptions.filter((prescription) => {

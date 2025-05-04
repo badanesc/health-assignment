@@ -2,12 +2,12 @@
 
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { usePrescriptionQuery } from "@/shared/hooks/usePrescriptionQuery";
 import { PrescriptionRefill } from "@/features/PrescriptionRefill/components";
 import { getPrescriptionStatus } from "@/shared/utils/prescription";
 import styles from "./PrescriptionDetail.module.css";
 import { PrescriptionStatus } from "@/shared/types/prescription";
-
+import { makePrescriptionQuery } from "@/shared/queries/prescription";
+import { useSuspenseQuery } from "@tanstack/react-query";
 const getStatusStyles = (status: PrescriptionStatus) => {
   if (status === 'expired') {
     return styles.statusNone;
@@ -30,7 +30,7 @@ const getActionLabel = (status: PrescriptionStatus) => {
 
 export const PrescriptionDetail = () => {
   const { id } = useParams();
-  const { data, isLoading, error } = usePrescriptionQuery(id as string);
+  const { data, isLoading, error } = useSuspenseQuery(makePrescriptionQuery(id as string))
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
