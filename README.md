@@ -63,6 +63,8 @@ For accessibility, this project uses:
 - Semantic HTML elements + ARIA attributes where appropriate to enhance the VO experience;
 - Making sure the app is usable with keyboard navigation only;
 - Ensure proper contrast between text and background;
+- Ensure every element has a visible outline when focused;
+- Ensure interactive elements have an expected keyboard IO; Example: the radio group should be navigable with arrow keys;
 
 In a real word scenario, the app design and interaction should be designed with a11y in mind. Some examples can include: 
 - extensive form validation, that guides the user through completion and error handling;
@@ -166,7 +168,7 @@ To have a better feel of what the mutation would feel like, I updated the mock A
 
 ### Third day
 
-Some debugging and fixes were done to enable proper SSR rendering and data fetching. To improve the app responsiveness, I added some prefetching to the prescription page of details link hover, as well as prefetching the prescriptions list page from the details page.
+Some debugging and fixes were done to enable proper SSR rendering and data fetching. To improve the app responsiveness, I added some prefetching to the prescription page on More Details link hover, as well as prefetching the prescriptions list page from the details page when hovering over the prescription list.
 
 Rest of the time was spent on documenting the code and process in this README.md document.
 
