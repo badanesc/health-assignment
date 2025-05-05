@@ -143,6 +143,7 @@ Some immediate additions that I can think of are:
 
 3. **Data Management**
    - Consider moving API layer to a dedicated feature for better separation
+   - Consider using a library like Zod to validate and type the data received by client
    - Implement caching strategies for better performance
 4. **Feature Documentation and Testing**
 
