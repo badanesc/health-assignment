@@ -34,11 +34,11 @@
     &.statusGood {
       background-color: var(--green-9);
     }
-  
+
     &.statusLow {
       background-color: var(--orange-9);
     }
-  
+
     &.statusNone {
       background-color: var(--red-9);
     }
@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--size-4);
-  max-width: var(--size-content-2)
+  max-width: var(--size-content-2);
 }
 
 .prescriptionImage {
@@ -63,7 +63,7 @@
   gap: var(--size-2);
 
   & > * {
-    flex: 1
+    flex: 1;
   }
 }
 

@@ -11,8 +11,10 @@ export const useFilteredPrescriptions = () => {
 
   const filteredPrescriptions = data.prescriptions.filter((prescription) => {
     const status = getPrescriptionStatus(prescription.refillsRemaining);
-    const nameMatch = prescription.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const statusMatch = statusFilter === 'all' || status === statusFilter;
+    const nameMatch = prescription.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const statusMatch = statusFilter === "all" || status === statusFilter;
 
     return nameMatch && statusMatch;
   });

@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import headerLogo from '@/assets/images/healthera-logo.png';
+import Image from "next/image";
+import Link from "next/link";
+import headerLogo from "@/assets/images/healthera-logo.png";
 
-import styles from './Header.module.css';
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
@@ -13,7 +13,9 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <Link href="/prescriptions" className={styles.navLink}>Prescription List</Link>
+            <Link href="/prescriptions" className={styles.navLink}>
+              Prescription List
+            </Link>
           </li>
         </ul>
       </nav>
@@ -21,4 +23,4 @@ const Header = () => {
   );
 };
 
-export {Header};
+export { Header };

@@ -13,4 +13,4 @@ export interface Prescription {
   frequency?: string;
 }
 
-export type PrescriptionStatus = 'active' | 'low' | 'expired'; 
+export type PrescriptionStatus = "active" | "low" | "expired";

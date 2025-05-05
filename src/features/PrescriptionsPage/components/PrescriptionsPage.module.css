@@ -7,7 +7,7 @@
 }
 
 @media (--md-n-below) {
-	.page {
+  .page {
     grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -5,12 +5,15 @@
   border: 1px solid var(--surface-2);
   border-radius: var(--radius-3);
   box-shadow: var(--shadow-2);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   text-decoration: none;
   color: inherit;
   max-width: none;
 
-  &:hover, &:focus-within {
+  &:hover,
+  &:focus-within {
     transform: translateY(-2px);
     box-shadow: var(--shadow-3);
   }
@@ -53,11 +56,11 @@
     &.statusGood {
       background-color: var(--green-9);
     }
-  
+
     &.statusLow {
       background-color: var(--orange-9);
     }
-  
+
     &.statusNone {
       background-color: var(--red-9);
     }
@@ -116,12 +119,13 @@
   display: flex;
   align-items: center;
 
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     text-decoration: underline;
   }
 
   &::after {
-    content: '→';
+    content: "→";
     margin-inline-start: var(--size-1);
   }
 

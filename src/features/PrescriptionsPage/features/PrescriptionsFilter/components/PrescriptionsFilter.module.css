@@ -15,7 +15,7 @@
 }
 
 @media (--md-n-below) {
-	.filter {
+  .filter {
     inset-block-end: 0rem;
   }
 }

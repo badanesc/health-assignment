@@ -1,2 +1,2 @@
-export * from './PrescriptionDetailsPage';
-export * from './PrescriptionDetail';
+export * from "./PrescriptionDetailsPage";
+export * from "./PrescriptionDetail";

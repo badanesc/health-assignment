@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useFilteredPrescriptions } from "../../hooks";
 import { PrescriptionCard } from "../PrescriptionCard";
@@ -11,7 +11,7 @@ const PrescriptionsList = () => {
   if (!data) return <div>No prescriptions found</div>;
 
   const { prescriptions } = data;
-    
+
   return (
     <ul className={styles.list}>
       {prescriptions.map((prescription) => (

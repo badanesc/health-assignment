@@ -1,1 +1,1 @@
-export * from './PrescriptionsFilter';
+export * from "./PrescriptionsFilter";

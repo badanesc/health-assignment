@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { ContentWrapper } from "@/components/ContentWrapper";
@@ -17,7 +17,14 @@ export const PrescriptionDetailsPage = () => {
     <ContentWrapper>
       <div className={styles.pageHeader}>
         <h1 className={styles.pageTitle}>Prescription Details Page</h1>
-        <Link onMouseEnter={prefetchPrescriptions} onFocus={prefetchPrescriptions} href="/prescriptions" className={styles.backLink}>Back to Prescriptions</Link>
+        <Link
+          onMouseEnter={prefetchPrescriptions}
+          onFocus={prefetchPrescriptions}
+          href="/prescriptions"
+          className={styles.backLink}
+        >
+          Back to Prescriptions
+        </Link>
       </div>
       <PrescriptionDetail />
     </ContentWrapper>

@@ -15,11 +15,11 @@
   font-size: var(--font-size-4);
   color: var(--link);
 
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     text-decoration: underline;
   }
 }
-
 
 @media (--lg-n-below) {
   .pageTitle {

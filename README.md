@@ -50,7 +50,8 @@ This project uses the App Router, and has 2 pages + home.
 ### Speed
 
 For speed, this project uses:
-- NextJS SSR 
+
+- NextJS SSR
 - TanStack Query for data fetching and caching
 - Prefetching of pages and data most likely to be accessed next
 
@@ -59,6 +60,7 @@ This can serve as a good starting point for a speed optimized app, and could be 
 ### Accessibility
 
 For accessibility, this project uses:
+
 - Support for Light and Dark themes; Ideally, every color should be hand picked to create an appropriate color palette for both themes.
 - Semantic HTML elements + ARIA attributes where appropriate to enhance the VO experience;
 - Making sure the app is usable with keyboard navigation only;
@@ -66,12 +68,14 @@ For accessibility, this project uses:
 - Ensure every element has a visible outline when focused;
 - Ensure interactive elements have an expected keyboard IO; Example: the radio group should be navigable with arrow keys;
 
-In a real word scenario, the app design and interaction should be designed with a11y in mind. Some examples can include: 
+In a real word scenario, the app design and interaction should be designed with a11y in mind. Some examples can include:
+
 - extensive form validation, that guides the user through completion and error handling;
 - graceful progress/loading and error states, with options to retry;
 - UI/UX and Animation, to guide the user through the main app flow and provide feedback on actions;
 
 ### Project Structure
+
 ```
 healthera/
 ├── src/                      # Source code directory
@@ -90,6 +94,7 @@ healthera/
 ```
 
 ### Feature structure
+
 ```
 features/
 ├── PrescriptionsPage/
@@ -106,6 +111,7 @@ Each feature should have a root component, that should serve as the entry point 
 There's the `PrescriptionRefill` feature, used to request a refill. It has an overengineered title that requests a prescription by id, to display the name of the prescription in the title. The feature only depends on the prescription **ID**, and by being used in the PrescriptionsList page and PrescriptionDetails page, it showcases the feature's reusability and cache capabilities of the react-query client.
 
 #### A more complex feature would looks something like this:
+
 ```
 features/
 ├── feature-name/
@@ -131,11 +137,13 @@ I believe the current structure is a good starting point for a feature based arc
 Some immediate additions that I can think of are:
 
 1. **Authentication & Authorization**
+
    - Create an `Auth` feature that manages user sessions, roles, and permissions
    - Implement route protection and role-based access control
    - Add authentication state management in the shared layer
 
 2. **Error Handling & Monitoring**
+
    - Develop an `ErrorBoundary` feature for consistent error handling
    - Add error reporting and monitoring integration
    - Implement retry mechanisms for API calls
@@ -149,11 +157,12 @@ Some immediate additions that I can think of are:
 
 This extension focuses on scalability, maintainability, and real-world requirements while preserving the feature-based architecture. The end result would very much be influenced by the project's growth and priorities.
 
-## Time Management 
+## Time Management
 
 In total, I think I spend ~2.5 working days on this project.
 
 ### First day
+
 Most of the first day was spent on setting up the project, installing dependencies and configuring build tools.
 
 The second part of the first day was spent implementing the Header and Prescriptions List and features, to kick start the feature based architecture setup.
@@ -172,4 +181,3 @@ To have a better feel of what the mutation would feel like, I updated the mock A
 Some debugging and fixes were done to enable proper SSR rendering and data fetching. To improve the app responsiveness, I added some prefetching to the prescription page on More Details link hover, as well as prefetching the prescriptions list page from the details page when hovering over the prescription list.
 
 Rest of the time was spent on documenting the code and process in this README.md document.
-

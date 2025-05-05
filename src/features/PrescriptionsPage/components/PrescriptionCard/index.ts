@@ -1,1 +1,1 @@
-export * from './PrescriptionCard';
+export * from "./PrescriptionCard";

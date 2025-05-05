@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { ContentWrapper } from '@/components/ContentWrapper';
+import Link from "next/link";
+import { ContentWrapper } from "@/components/ContentWrapper";
 
 export default function Home() {
   return (
@@ -7,8 +7,14 @@ export default function Home() {
       <ContentWrapper>
         <p>Healthera home assignment</p>
         <ul>
-          <li>Start with a list of <Link href="/prescriptions">prescriptions</Link></li>
-          <li>Or go straight to a <Link href="/prescriptions/1">prescription details page</Link></li>
+          <li>
+            Start with a list of{" "}
+            <Link href="/prescriptions">prescriptions</Link>
+          </li>
+          <li>
+            Or go straight to a{" "}
+            <Link href="/prescriptions/1">prescription details page</Link>
+          </li>
         </ul>
       </ContentWrapper>
     </main>

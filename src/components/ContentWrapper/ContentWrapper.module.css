@@ -2,7 +2,9 @@
   padding-block-start: var(--size-fluid-2);
   display: grid;
   justify-items: flex-start;
-  grid-template-columns: var(--size-8) calc(100% - 2 * var(--size-8)) var(--size-8);
+  grid-template-columns: var(--size-8) calc(100% - 2 * var(--size-8)) var(
+      --size-8
+    );
 
   & > * {
     grid-column: 2;
@@ -11,6 +13,8 @@
 
 @media (--lg-n-below) {
   .contentWrapper {
-    grid-template-columns: var(--size-4) calc(100% - 2 * var(--size-4)) var(--size-4);
+    grid-template-columns: var(--size-4) calc(100% - 2 * var(--size-4)) var(
+        --size-4
+      );
   }
 }

@@ -1,17 +1,20 @@
-'use client';
+"use client";
 
-import { useCallback } from 'react';
-import { SearchInput } from '@/components/SearchInput';
-import { usePrescriptionsFilters } from '../store';
-import { StatusRadioGroup } from './StatusRadioGroup';
-import styles from './PrescriptionsFilter.module.css';
+import { useCallback } from "react";
+import { SearchInput } from "@/components/SearchInput";
+import { usePrescriptionsFilters } from "../store";
+import { StatusRadioGroup } from "./StatusRadioGroup";
+import styles from "./PrescriptionsFilter.module.css";
 
 export const PrescriptionsFilter = () => {
   const { setSearchTerm } = usePrescriptionsFilters();
 
-  const handleSearch = useCallback((value: string) => { 
-    setSearchTerm(value);
-  }, [setSearchTerm]);
+  const handleSearch = useCallback(
+    (value: string) => {
+      setSearchTerm(value);
+    },
+    [setSearchTerm]
+  );
 
   return (
     <aside className={styles.filter}>
