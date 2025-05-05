@@ -24,6 +24,5 @@ export const StatusRadioGroup = () => {
         <RadioInput label="Expired" name="status" value={expired} onChange={handleStatusChange} />
       </div>
     </fieldset>
-
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Prescription } from '@/shared/types/prescription';
+import { Prescription, PrescriptionStatus } from '@/shared/types/prescription';
 import styles from './PrescriptionCard.module.css';
 import { getPrescriptionStatus } from '@/shared/utils/prescription';
 import {PrescriptionRefill} from '@/features/PrescriptionRefill';
@@ -12,18 +12,18 @@ interface PrescriptionCardProps {
   prescription: Prescription;
 }
 
-export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {  
-  const prescriptionStatus = getPrescriptionStatus(prescription.refillsRemaining);
-  const getStatusStyles = () => {
-    if (prescriptionStatus === 'expired') {
-      return styles.statusNone;
-    } else if (prescriptionStatus === 'low') {
-      return styles.statusLow;
-    } else {
-      return styles.statusGood;
-    }
-  };
+const getStatusStyles = (status: PrescriptionStatus) => {
+  if (status === 'expired') {
+    return styles.statusNone;
+  } else if (status === 'low') {
+    return styles.statusLow;
+  } else {
+    return styles.statusGood;
+  }
+};
 
+export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {  
+  const prescriptionStatus = getPrescriptionStatus(prescription.refillsRemaining)
   const queryClient = useQueryClient();
   const prefetchPrescriptionDetails = () => {
     queryClient.prefetchQuery(makePrescriptionQuery(prescription.id));
@@ -33,7 +33,7 @@ export const PrescriptionCard = ({ prescription }: PrescriptionCardProps) => {
     <li className={styles.card}>
       <div className={styles.header}>
         <h3 className={styles.title}>{prescription.name}</h3>
-        <span className={`${styles.status} ${getStatusStyles()}`}>
+        <span className={`${styles.status} ${getStatusStyles(prescriptionStatus)}`}>
           {prescription.refillsRemaining} refill{prescription.refillsRemaining !== 1 ? 's' : ''} left
         </span>
       </div>
